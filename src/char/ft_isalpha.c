@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgracia- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lgracia- <lgracia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 18:40:30 by lgracia-          #+#    #+#             */
-/*   Updated: 2024/07/30 11:41:03 by lgracia-         ###   ########.fr       */
+/*   Updated: 2025/07/17 10:35:19 by lgracia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "libft.h"
 
-int	ft_isalpha(int c)
+short	ft_isalpha(int c)
 {
 	if (c > 64 && c < 91)
 		return (1024);

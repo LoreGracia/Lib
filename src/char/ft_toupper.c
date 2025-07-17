@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgracia- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lgracia- <lgracia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 19:22:11 by lgracia-          #+#    #+#             */
-/*   Updated: 2024/06/26 14:52:28 by lgracia-         ###   ########.fr       */
+/*   Created: 2024/06/20 16:07:45 by lgracia-          #+#    #+#             */
+/*   Updated: 2025/07/17 12:53:36 by lgracia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+short	ft_toupper(int c)
 {
-	if (c > 47 && c < 58)
-		return (2048);
-	else
-		return (0);
+	if (c < 123 && c > 96)
+		c -= 32;
+	return (c);
 }
 /*
 #include <stdio.h>
 
 int	main()
 {
-	printf("%d\n", ft_isdigit('9'));
-	printf("%d\n", ft_isdigit('a'));
+	printf("%c", ft_toupper('A'));
+	printf("%c", ft_toupper('a'));
+	printf("%c", ft_toupper('z'));
+	printf("%c", ft_toupper('Z'));
 }*/

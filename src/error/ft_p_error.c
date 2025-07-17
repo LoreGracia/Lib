@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_p_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgracia- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lgracia- <lgracia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 20:00:08 by lgracia-          #+#    #+#             */
-/*   Updated: 2024/06/26 14:56:08 by lgracia-         ###   ########.fr       */
+/*   Created: 2025/07/17 12:50:39 by lgracia-          #+#    #+#             */
+/*   Updated: 2025/07/17 12:52:48 by lgracia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_p_error(char *msg)
 {
-	if (c > 31 && c < 127)
-		return (16384);
-	else
-		return (0);
+	ft_putstr_fd(msg, 2);
 }
-/*
-#include <stdio.h>
-
-int	main()
-{
-	printf("%d\n", ft_isprint('i'));
-	printf("%d\n", ft_isprint(127));
-	printf("%d\n", ft_isprint(11));
-}*/

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgracia- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lgracia- <lgracia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/20 16:28:42 by lgracia-          #+#    #+#             */
-/*   Updated: 2024/07/10 10:03:21 by lgracia-         ###   ########.fr       */
+/*   Created: 2024/06/17 20:00:08 by lgracia-          #+#    #+#             */
+/*   Updated: 2025/07/17 10:35:13 by lgracia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+short	ft_isprint(int c)
 {
-	if (c > 64 && c < 91)
-		c += 32;
-	return (c);
+	if (c > 31 && c < 127)
+		return (16384);
+	else
+		return (0);
 }
 /*
 #include <stdio.h>
 
 int	main()
 {
-	printf("%c", ft_tolower('A'));
-	printf("%c", ft_tolower('a'));
-	printf("%c", ft_tolower('z'));
-	printf("%c", ft_tolower('Z'));
+	printf("%d\n", ft_isprint('i'));
+	printf("%d\n", ft_isprint(127));
+	printf("%d\n", ft_isprint(11));
 }*/

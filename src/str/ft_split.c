@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgracia- <lgracia-@student.42barcel>       +#+  +:+       +#+        */
+/*   By: lgracia- <lgracia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 14:50:24 by lgracia-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:29:27 by lgracia-         ###   ########.fr       */
+/*   Updated: 2025/07/17 10:34:52 by lgracia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	words(char const *s, char c)
+static short	words(char const *s, char c)
 {
 	int	count;
 	int	i;
@@ -38,7 +38,7 @@ static int	words(char const *s, char c)
 	return (count);
 }
 
-static int	starts(char const *s, char c, int next, int point)
+static short	starts(char const *s, char c, int next, int point)
 {
 	int	start;
 

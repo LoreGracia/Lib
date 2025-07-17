@@ -3,48 +3,66 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lgracia- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: lgracia- <lgracia-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/17 18:19:07 by lgracia-          #+#    #+#              #
-#    Updated: 2025/07/16 16:36:53 by lgracia-         ###   ########.fr        #
+#    Updated: 2025/07/17 12:55:18 by lgracia-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -I ./
 
 NAME = libft.a
 
 HEADER = libft.h
 
-FILES = ft_isprint.c ft_strjoin.c ft_strtrim.c ft_arraycpy.c ft_arrayncpy.c ft_atoi.c ft_itoa.c ft_putendl_fd.c ft_strlcat.c ft_substr.c ft_bzero.c ft_memchr.c ft_putnbr_fd.c ft_strlcpy.c ft_tolower.c ft_calloc.c ft_memcmp.c ft_putstr_fd.c ft_strlen.c ft_toupper.c ft_isalnum.c ft_memcpy.c ft_split.c ft_strmapi.c ft_isalpha.c  ft_memmove.c ft_strchr.c ft_strncmp.c ft_isascii.c  ft_memset.c ft_strdup.c ft_strnstr.c ft_isdigit.c ft_putchar_fd.c ft_striteri.c ft_strrchr.c ft_strcmp.c #$(shell ls *.c)
+SRC = error/ft_malloc_error.c error/ft_p_error.c \
+	char/ft_isprint.c char/ft_toupper.c char/ft_tolower.c char/ft_isalpha.c char/ft_isascii.c char/ft_isdigit.c char/ft_isalnum.c\
+	str/ft_substr.c str/ft_strdup.c str/ft_strlen.c \
+	str/ft_strtrim.c str/ft_strjoin.c str/ft_strchrcmp.c str/ft_strcmp.c str/ft_strncmp.c str/ft_strnstr.c str/ft_strlcpy.c str/ft_strlcat.c str/ft_split.c \
+	str/ft_strchr.c str/ft_strrchr.c \
+	str/ft_strmapi.c str/ft_striteri.c str/ft_arraycpy.c str/ft_arrayncpy.c \
+	num/ft_atoi.c num/ft_itoa.c \
+	fd/ft_putchar_fd.c fd/ft_putnbr_fd.c fd/ft_putstr_fd.c fd/ft_putendl_fd.c \
+	mem/ft_bzero.c mem/ft_calloc.c mem/ft_memcmp.c mem/ft_memchr.c mem/ft_memset.c mem/ft_memcpy.c mem/ft_memmove.c
 
-OBJ = $(FILES:.c=.o)
+DOBJ = obj
 
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+DSRC = $(addprefix src/, $(SRC))
+
+OBJ = $(addprefix $(DOBJ)/, $(SRC:.c=.o))
+
+BONUS = lst/ft_lstnew.c lst/ft_lstadd_front.c lst/ft_lstsize.c lst/ft_lstlast.c lst/ft_lstadd_back.c lst/ft_lstdelone.c lst/ft_lstclear.c lst/ft_lstiter.c lst/ft_lstmap.c
 
 OBJBONUS = $(BONUS:.c=.o)
 
-DEPS = $(FILES:.c=.d)
+DEPS = $(addprefix $(DOBJ)/, $(SRC:.c=.d))
 
 DEPSB = $(BONUS:.c=.d)
 
-
-all: $(NAME)
+all: dir $(NAME)
 
 -include $(DEPS)
 
-$(NAME): $(OBJ)
+dir:
+	mkdir -p $(DOBJ)
+	mkdir -p $(DOBJ)/str
+	mkdir -p $(DOBJ)/mem
+	mkdir -p $(DOBJ)/char
+	mkdir -p $(DOBJ)/num
+	mkdir -p $(DOBJ)/fd
+	mkdir -p $(DOBJ)/error
+
+$(NAME): $(OBJ) Makefile
 	ar -rcs $(NAME) $(OBJ)
 
-%.o:%.c Makefile
+$(DOBJ)/%.o:src/%.c Makefile
 	$(CC) $(FLAGS) -MMD -c $< -o $@
 
 clean:
-	rm -fr $(OBJ)
-	rm -fr $(DEPS)
-	rm -fr $(DEPSB)
+	rm -fr $(DOBJ)
 	rm -fr $(OBJBONUS)
 
 fclean: clean

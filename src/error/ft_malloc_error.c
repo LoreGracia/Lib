@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_malloc_error.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgracia- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lgracia- <lgracia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 19:52:03 by lgracia-          #+#    #+#             */
-/*   Updated: 2024/07/14 18:43:30 by lgracia-         ###   ########.fr       */
+/*   Created: 2025/07/17 10:51:13 by lgracia-          #+#    #+#             */
+/*   Updated: 2025/07/17 12:52:22 by lgracia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void	*ft_malloc_error(void *foo)
 {
-	if (c > -1 && c < 128)
-		return (1);
-	else
-		return (0);
+	if (!foo)
+	{
+		ft_p_error("Malloc fail\n");
+		exit(1);
+	}
+	return (foo);
 }
-/*
-#include <stdio.h>
-
-int	main()
-{
-	printf("%d\n", ft_isascii('i'));
-	printf("%d\n", ft_isascii(-128));
-}*/
