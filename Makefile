@@ -6,7 +6,7 @@
 #    By: lgracia- <lgracia-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/17 18:19:07 by lgracia-          #+#    #+#              #
-#    Updated: 2025/07/19 13:29:57 by lgracia-         ###   ########.fr        #
+#    Updated: 2025/07/22 18:04:47 by lgracia-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = error/ft_malloc_error.c error/ft_p_error.c \
 	str/ft_strtrim.c str/ft_strjoin.c str/ft_strchrcmp.c str/ft_strcmp.c str/ft_strncmp.c str/ft_strnstr.c str/ft_strlcpy.c str/ft_strlcat.c str/ft_split.c \
 	str/ft_strchr.c str/ft_strrchr.c \
 	str/ft_strmapi.c str/ft_striteri.c str/ft_arraycpy.c str/ft_arrayncpy.c \
-	num/ft_atoi.c num/ft_itoa.c \
+	num/ft_atoi.c num/ft_itoa.c num/ft_itohexup.c \
 	fd/ft_putchar_fd.c fd/ft_putnbr_fd.c fd/ft_putstr_fd.c fd/ft_putendl_fd.c \
 	mem/ft_bzero.c mem/ft_calloc.c mem/ft_memcmp.c mem/ft_memchr.c mem/ft_memset.c mem/ft_memcpy.c mem/ft_memmove.c \
 	clear/clear_array.c
@@ -55,6 +55,7 @@ dir:
 	mkdir -p $(DOBJ)/num
 	mkdir -p $(DOBJ)/fd
 	mkdir -p $(DOBJ)/error
+	mkdir -p $(DOBJ)/clear
 
 $(NAME): $(OBJ) Makefile
 	ar -rcs $(NAME) $(OBJ)

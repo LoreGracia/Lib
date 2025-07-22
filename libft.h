@@ -6,7 +6,7 @@
 /*   By: lgracia- <marvin@42.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 19:56:08 by lgracia-          #+#    #+#             */
-/*   Updated: 2025/02/23 19:04:02 by lgracia-         ###   ########.fr       */
+/*   Updated: 2025/07/22 18:03:35 by lgracia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ short			ft_tolower(int c);
 /*num*/
 char			*ft_itoa(int n);
 int				ft_atoi(const char *str);
+void			itohexup(unsigned int d, char **str, int i);
 
 /*str*/
 short			ft_strncmp(const char *s1, const char *s2, size_t n);
